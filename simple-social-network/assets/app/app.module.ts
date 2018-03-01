@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AuthService } from './auth/auth.service';
+import { ErrorService } from './errors/error.service';
 import { AppComponent } from './app.component';
+import { AuthenticationComponent } from './auth/authentication.component';
+import { ErrorComponent } from './errors/error.component';
+import { HeaderComponent } from './header.component';
+import { LogoutComponent } from './auth/logout.component';
 import { MessageComponent } from './messages/message.component';
 import { MessageListComponent } from './messages/message-list.component';
 import { MessageInputComponent } from './messages/message-input.component';
 import { MessagesComponent } from './messages/messages.component';
-import { AuthenticationComponent } from './auth/authentication.component';
-import { HeaderComponent } from './header.component';
-import { routing } from './app.routing';
-import { LogoutComponent } from './auth/logout.component';
 import { SignupComponent } from './auth/signup.component';
 import { SigninComponent } from './auth/signin.component';
-import { AuthService } from './auth/auth.service';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { AuthService } from './auth/auth.service';
     HeaderComponent,
     LogoutComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { AuthService } from './auth/auth.service';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
