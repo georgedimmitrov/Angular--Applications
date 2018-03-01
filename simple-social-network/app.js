@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 const appRoutes = require('./routes/app');
 const messageRoutes = require('./routes/messages');
+const userRoutes = require('./routes/user');
 
 const app = express();
 mongoose.connect('localhost:27017/simplesocialnetwork');
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/message', messageRoutes);
+app.use('/user', userRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler
