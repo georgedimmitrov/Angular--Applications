@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
@@ -6,7 +6,6 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe(
       'Tasty Dessert Fruit',
@@ -20,7 +19,7 @@ export class RecipeService {
     new Recipe(
       'Waffle with Strawberries',
       'Simple waffles with strawberries!',
-      'https://cdn.pixabay.com/photo/2017/07/27/18/38/waffle-2546308_960_720.jpg',
+      'https://c.pxhere.com/photos/9d/be/ice_cream_sundae_summer_delicious_ice_ice_cream_feasting_sweet_dessert-1171644.jpg!d',
       [
         new Ingredient('Waffle', 3),
         new Ingredient('Strawberry', 17)
@@ -32,6 +31,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
