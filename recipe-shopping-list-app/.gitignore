@@ -9,6 +9,8 @@
 # dependencies
 /node_modules
 
+/src/environments/secret.ts
+
 # IDEs and editors
 /.idea
 .project
