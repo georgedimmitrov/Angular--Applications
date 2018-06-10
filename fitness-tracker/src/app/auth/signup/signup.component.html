@@ -61,6 +61,7 @@
     </mat-checkbox>
 
     <button
+      *ngIf="!isLoading"
       type="submit"
       mat-raised-button
       color="primary"
@@ -68,5 +69,6 @@
     >
       Submit
     </button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
 </section>
