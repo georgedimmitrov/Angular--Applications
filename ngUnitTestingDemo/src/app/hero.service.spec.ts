@@ -26,11 +26,12 @@ describe('HeroService', () => {
   });
 
   describe('getHero', () => {
-  it('should call get with the correct URL', () => {
-    heroService.getHero(4).subscribe();
+    it('should call get with the correct URL', () => {
+      heroService.getHero(4).subscribe();
 
-    const req = httpTestingController.expectOne('api/heroes/4');
-    req.flush({ id: 4, name: 'Super Dude', strength: 100 });
-    httpTestingController.verify();
+      const req = httpTestingController.expectOne('api/heroes/4');
+      req.flush({ id: 4, name: 'Super Dude', strength: 100 });
+      httpTestingController.verify();
+    });
   });
 });
